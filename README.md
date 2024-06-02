@@ -89,7 +89,9 @@ We provide a method to quickly deploy the Skywork-Moe-base model based on vllm.
 
 Under fp8 precision you can run Skywork-Moe-base with just only 8*4090.
 
-You can get the source code in [`vLLM`](https://github.com/SkyworkAI/vllm)
+You can get the source code in [`vllm`](https://github.com/SkyworkAI/vllm)
+
+You can get the fp8 model in [`Skywork-MoE-Base-FP8`](https://huggingface.co/Skywork/Skywork-MoE-Base-FP8)
 
 ### Based on local environment
 
@@ -216,5 +218,4 @@ If you find our work helpful, please feel free to cite our paper~
       primaryClass={cs.CL}
 }
 ```
-
 
