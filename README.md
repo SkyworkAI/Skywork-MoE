@@ -52,6 +52,38 @@ Skywork-MoE demonstrates comparable or superior performance to models with more 
 We evaluated Skywork-MoE-base model on various popular benchmarks, including C-Eval, MMLU, CMMLU, GSM8K, MATH and HumanEval.
 <img src="misc/skywork_moe_base_evaluation.png" alt="Image" width="600" height="280">
 
+# Demonstration of Hugging Face Model Inference
+
+## Base Model Inference
+
+We can perform inference for the Skywork-MoE-base (16x13B size) model using HuggingFace on 8xA100/A800 or higher GPU hardware configurations.
+
+```python
+
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+model = AutoModelForCausalLM.from_pretrained("Skywork/Skywork-MoE-base", trust_remote_code=True, device_map='auto')
+tokenizer = AutoTokenizer.from_pretrained("Skywork/Skywork-MoE-base", trust_remote_code=True)
+
+inputs = tokenizer('陕西的省会是西安', return_tensors='pt').to(model.device)
+response = model.generate(inputs.input_ids, max_length=128)
+print(tokenizer.decode(response.cpu()[0], skip_special_tokens=True))
+"""
+陕西的省会是西安。
+西安，古称长安、镐京，是陕西省会、副省级市、关中平原城市群核心城市、丝绸之路起点城市、“一带一路”核心区、中国西部地区重要的中心城市，国家重要的科研、教育、工业基地。
+西安是中国四大古都之一，联合国科教文组织于1981年确定的“世界历史名城”，美媒评选的世界十大古都之一。地处关中平原中部，北濒渭河，南依秦岭，八水润长安。下辖11区2县并代管西
+"""
+
+inputs = tokenizer('陕西的省会是西安，甘肃的省会是兰州，河南的省会是郑州', return_tensors='pt').to(model.device)
+response = model.generate(inputs.input_ids, max_length=128)
+print(tokenizer.decode(response.cpu()[0], skip_special_tokens=True))
+"""
+陕西的省会是西安，甘肃的省会是兰州，河南的省会是郑州，湖北的省会是武汉，湖南的省会是长沙，安徽的省会是合肥，江西的省会是南昌，江苏的省会是南京，浙江的省会是杭州，福建的省会是福州，广东的省会是广州，广西的省会是南宁，四川的省会是成都，贵州的省会是贵阳，云南的省会是昆明，山西的省会是太原，山东的省会是济南，河北的省会是石家庄，辽宁的省会是沈阳，吉林的省会是长春，黑龙江的
+"""
+
+```
+
+
 # Declaration and License Agreement
 
 
