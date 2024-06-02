@@ -83,6 +83,108 @@ print(tokenizer.decode(response.cpu()[0], skip_special_tokens=True))
 
 ```
 
+## Quickstart with vLLM
+
+We provide a method to quickly deploy the Skywork-Moe-base model based on vllm.
+
+Under fp8 precision you can run Skywork-Moe-base with just only 8*4090.
+
+You can get the source code in [`vllm`](https://github.com/SkyworkAI/vllm)
+
+You can get the fp8 model in [`Skywork-MoE-Base-FP8`](https://huggingface.co/Skywork/Skywork-MoE-Base-FP8)
+
+### Based on local environment
+
+Since pytorch only supports 4090 using fp8 precision in the nightly version, you need to install the corresponding or newer version of pytorch.
+
+``` shell
+# for cuda12.1
+pip3 install --pre torch --index-url https://download.pytorch.org/whl/nightly/cu121
+# for cuda12.4
+pip3 install --pre torch --index-url https://download.pytorch.org/whl/nightly/cu124
+```
+
+Some other dependencies also need to be installed:
+
+```shell
+pip3 install xformers vllm-flash-attn 
+```
+
+Then clone the [`vllm`](https://github.com/SkyworkAI/vllm) provided by skywork and change to `skywork-moe` branch:
+
+``` shell
+git clone https://github.com/SkyworkAI/vllm.git -b skywork-moe
+cd vllm
+```
+
+Then compile and install vllm:
+
+``` shell
+MAX_JOBS=8 python3 setup.py install
+```
+
+### Base on docker
+
+You can use the docker image provided by skywork to run vllm directly:
+
+```shell
+docker pull registry.cn-wulanchabu.aliyuncs.com/triple-mu/skywork-moe-vllm:v1
+```
+
+Then start the container and set the model path and working directory.
+
+```shell
+model_path="Skywork/Skywork-MoE-Base-FP8"
+workspace=${PWD}
+
+docker run \
+    --runtime nvidia \
+    --gpus all \
+    -it \
+    --rm \
+    --shm-size=1t \
+    --ulimit memlock=-1 \
+    --privileged=true \
+    --ulimit stack=67108864 \
+    --ipc=host \
+    -v ${model_path}:/Skywork-MoE-Base-FP8 \
+    -v ${workspace}:/workspace \
+    registry.cn-wulanchabu.aliyuncs.com/triple-mu/skywork-moe-vllm:v1
+```
+
+Now, you can run the Skywork Moe base model for fun!
+
+### Text Completion
+
+``` python
+from vllm import LLM, SamplingParams
+
+model_path = '/path/to/skywork-moe-base'
+prompts = [
+    "The president of the United States is",
+    "The capital of France is",
+]
+
+sampling_params = SamplingParams(temperature=0.3, max_tokens=256)
+
+llm = LLM(
+    model=model_path,
+    quantization='fp8',
+    kv_cache_dtype='fp8',
+    tensor_parallel_size=8,
+    gpu_memory_utilization=0.95, 
+    enforce_eager=True,
+    trust_remote_code=True,
+)
+
+outputs = llm.generate(prompts, sampling_params)
+
+for output in outputs:
+    prompt = output.prompt
+    generated_text = output.outputs[0].text
+    print(f"Prompt: {prompt!r}, Generated text: {generated_text!r}")
+```
+
 
 # Declaration and License Agreement
 
@@ -116,5 +218,4 @@ If you find our work helpful, please feel free to cite our paper~
       primaryClass={cs.CL}
 }
 ```
-
 
