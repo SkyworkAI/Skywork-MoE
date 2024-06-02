@@ -146,7 +146,7 @@ docker run \
     --ulimit stack=67108864 \
     --ipc=host \
     -v ${model_path}:/Skywork-MoE-Base-FP8 \
-    -v {workspace}:/workspace \
+    -v ${workspace}:/workspace \
     registry.cn-wulanchabu.aliyuncs.com/triple-mu/skywork-moe-vllm:v1
 ```
 
