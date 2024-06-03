@@ -29,7 +29,7 @@ Skywork-MoE 是一个高性能的专家混合（MoE）模型，拥有1460亿参�
 Skywork-MoE 展示出与参数更多或激活参数更多的模型（如Grok-1、DBRX、Mistral 8*22 和 Deepseek-V2）相当或更优的性能。
 
 # 新闻和更新
-* 2024.6.3  我们发布了 **Skywork-MoE-base** 模型。
+* 2024.6.3  我们发布了 **Skywork-MoE-Base** 模型。
 
 # 目录
 
@@ -43,28 +43,29 @@ Skywork-MoE 展示出与参数更多或激活参数更多的模型（如Grok-1�
 
 # 下载链接
 
-|         | HuggingFace 模型   |  ModelScope 模型   |  Wisemodel 模型  |
-|:-------:|:-----------:|:-----------------------------:|:-----------------------------:|
-| **Skywork-MoE-base**      | 🤗 [Skywork-MoE-base](https://huggingface.co/Skywork/Skywork-MoE-base)  | 🤖[Skywork-MoE-base](https://www.modelscope.cn/models/skywork/Skywork-MoE-base) | 👾[Skywork-MoE-base](https://wisemodel.cn/models/Skywork/Skywork-MoE-base) |
-| **Skywork-MoE-Base-FP8**  | 🤗 [Skywork-MoE-Base-FP8](https://huggingface.co/Skywork/Skywork-MoE-Base-FP8) | 🤖 | 👾 |
+|         |                                 HuggingFace 模型                                 |                                  ModelScope 模型                                  |                                Wisemodel 模型                                |
+|:-------:|:------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------:|:--------------------------------------------------------------------------:|
+| **Skywork-MoE-Base**     |     🤗 [Skywork-MoE-Base](https://huggingface.co/Skywork/Skywork-MoE-Base)     | 🤖[Skywork-MoE-Base](https://www.modelscope.cn/models/skywork/Skywork-MoE-base) | 👾[Skywork-MoE-Base](https://wisemodel.cn/models/Skywork/Skywork-MoE-base) |
+| **Skywork-MoE-Base-FP8**  | 🤗 [Skywork-MoE-Base-FP8](https://huggingface.co/Skywork/Skywork-MoE-Base-FP8) |                                       🤖                                        |                                     👾                                     |
+| **Skywork-MoE-Chat** | 😊 [Coming Soon]() | 🤖 | 👾 |
 
 # 基准测试结果
 
-我们在各种热门基准测试（包括C-Eval、MMLU、CMMLU、GSM8K、MATH和HumanEval）上评估了Skywork-MoE-base模型。
+我们在各种热门基准测试（包括C-Eval、MMLU、CMMLU、GSM8K、MATH和HumanEval）上评估了Skywork-MoE-Base模型。
 <img src="misc/skywork_moe_base_evaluation.png" alt="Image" width="600" height="280">
 
 # Hugging Face模型推理演示
 
 ## 基础模型推理
 
-我们可以使用HuggingFace在8xA100/A800或更高的GPU硬件配置上进行Skywork-MoE-base（16x13B规模）模型的推理。
+我们可以使用HuggingFace在8xA100/A800或更高的GPU硬件配置上进行Skywork-MoE-Base（16x13B规模）模型的推理。
 
 ```python
 
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-model = AutoModelForCausalLM.from_pretrained("Skywork/Skywork-MoE-base", trust_remote_code=True, device_map='auto')
-tokenizer = AutoTokenizer.from_pretrained("Skywork/Skywork-MoE-base", trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained("Skywork/Skywork-MoE-Base", trust_remote_code=True, device_map='auto')
+tokenizer = AutoTokenizer.from_pretrained("Skywork/Skywork-MoE-Base", trust_remote_code=True)
 
 inputs = tokenizer('陕西的省会是西安', return_tensors='pt').to(model.device)
 response = model.generate(inputs.input_ids, max_length=128)
@@ -92,9 +93,9 @@ print(tokenizer.decode(response.cpu()[0], skip_special_tokens=True))
 
 ## 基于vLLM的快速启动
 
-我们提供了一种基于vllm快速部署Skywork-Moe-base模型的方法。
+我们提供了一种基于vllm快速部署Skywork-Moe-Base模型的方法。
 
-在fp8精度下，你只需8*4090即可运行Skywork-Moe-base。
+在fp8精度下，你只需8*4090即可运行Skywork-Moe-Base。
 
 你可以在[`vllm`](https://github.com/SkyworkAI/vllm)中获取源代码。
 
