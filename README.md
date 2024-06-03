@@ -102,27 +102,30 @@ Since pytorch only supports 4090 using fp8 precision in the nightly version, you
 
 ``` shell
 # for cuda12.1
-pip3 install --pre torch --index-url https://download.pytorch.org/whl/nightly/cu121
+pip3 install --pre torch pytorch-triton --index-url https://download.pytorch.org/whl/nightly/cu121
 # for cuda12.4
-pip3 install --pre torch --index-url https://download.pytorch.org/whl/nightly/cu124
+pip3 install --pre torch pytorch-triton --index-url https://download.pytorch.org/whl/nightly/cu124
 ```
 
 Some other dependencies also need to be installed:
 
 ```shell
-pip3 install xformers vllm-flash-attn 
+MAX_JOBS=8 pip3 install git+https://github.com/facebookresearch/xformers.git # need to wait for a long time
+pip3 install vllm-flash-attn --no-deps
 ```
 
-Then clone the [`vllm`](https://github.com/SkyworkAI/vllm) provided by skywork and change to `skywork-moe` branch:
+Then clone the [`vllm`](https://github.com/SkyworkAI/vllm) provided by skywork:
 
 ``` shell
-git clone https://github.com/SkyworkAI/vllm.git -b skywork-moe
+git clone https://github.com/SkyworkAI/vllm.git
 cd vllm
 ```
 
 Then compile and install vllm:
 
 ``` shell
+pip3 install -r requirements-build.txt
+pip3 install -r requirements-cuda.txt
 MAX_JOBS=8 python3 setup.py install
 ```
 
@@ -162,7 +165,7 @@ Now, you can run the Skywork Moe base model for fun!
 ``` python
 from vllm import LLM, SamplingParams
 
-model_path = '/path/to/skywork-moe-base'
+model_path = 'Skywork/Skywork-MoE-Base-FP8'
 prompts = [
     "The president of the United States is",
     "The capital of France is",
