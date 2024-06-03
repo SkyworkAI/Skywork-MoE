@@ -89,7 +89,7 @@ print(tokenizer.decode(response.cpu()[0], skip_special_tokens=True))
 
 ## Chat Model Inference
 
-comming soon...
+coming soon...
 
 
 # Demonstration of vLLM Model Inference
