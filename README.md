@@ -46,7 +46,7 @@ Skywork-MoE demonstrates comparable or superior performance to models with more 
 |         | HuggingFace Model   |  ModelScope Model   |  Wisemodel Model  |
 |:-------:|:-----------:|:-----------------------------:|:-----------------------------:|
 | **Skywork-MoE-base**      | 🤗 [Skywork-MoE-base](https://huggingface.co/Skywork/Skywork-MoE-base)  | 🤖[Skywork-MoE-base](https://www.modelscope.cn/models/skywork/Skywork-MoE-base) | 👾[Skywork-MoE-base](https://wisemodel.cn/models/Skywork/Skywork-MoE-base) |
-
+| **Skywork-MoE-Base-FP8**  | 🤗 [Skywork-MoE-Base-FP8](https://huggingface.co/Skywork/Skywork-MoE-Base-FP8) | 🤖 | 👾 |
 
 # Benchmark Results
 We evaluated Skywork-MoE-base model on various popular benchmarks, including C-Eval, MMLU, CMMLU, GSM8K, MATH and HumanEval.
