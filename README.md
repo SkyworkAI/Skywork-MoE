@@ -24,7 +24,7 @@
 
 Skywork-MoE 是一个高性能的专家混合（MoE）模型，拥有1460亿参数、16个专家和220亿激活参数。该模型是基于我们现有的Skywork-13B模型的Dense检查点初始化的。
 
-我们引入了两项创新技术：门控Logit归一化，增强专家多样性；自适应辅助损失系数，允许对辅助损失系数进行层级调整。
+我们引入了两项创新技术：Gating Logit Normalization，增强专家多样性；Adaptive Auxiliary Loss Coefficients，允许对辅助损失系数进行层级调整。
 
 Skywork-MoE 展示出与参数更多或激活参数更多的模型（如Grok-1、DBRX、Mistral 8*22 和 Deepseek-V2）相当或更优的性能。
 
