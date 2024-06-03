@@ -110,8 +110,8 @@ pip3 install --pre torch pytorch-triton --index-url https://download.pytorch.org
 Some other dependencies also need to be installed:
 
 ```shell
-pip3 install git+https://github.com/facebookresearch/xformers.git 
-pip3 install vllm-flash-attn 
+MAX_JOBS=8 pip3 install git+https://github.com/facebookresearch/xformers.git # need to wait for a long time
+pip3 install vllm-flash-attn --no-deps
 ```
 
 Then clone the [`vllm`](https://github.com/SkyworkAI/vllm) provided by skywork and change to `skywork-moe` branch:
@@ -124,6 +124,8 @@ cd vllm
 Then compile and install vllm:
 
 ``` shell
+pip3 install -r requirements-build.txt
+pip3 install -r requirements-cuda.txt
 MAX_JOBS=8 python3 setup.py install
 ```
 
