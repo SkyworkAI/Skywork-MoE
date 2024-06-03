@@ -93,9 +93,9 @@ print(tokenizer.decode(response.cpu()[0], skip_special_tokens=True))
 
 ## 基于vLLM的快速启动
 
-我们提供了一种基于vllm快速部署Skywork-Moe-Base模型的方法。
+我们提供了一种基于vllm快速部署Skywork-MoE-Base模型的方法。
 
-在fp8精度下，你只需8*4090即可运行Skywork-Moe-Base。
+在fp8精度下，你只需8*4090即可运行Skywork-MoE-Base。
 
 你可以在[`vllm`](https://github.com/SkyworkAI/vllm)中获取源代码。
 
@@ -163,7 +163,7 @@ docker run \
     registry.cn-wulanchabu.aliyuncs.com/triple-mu/skywork-moe-vllm:v1
 ```
 
-现在，你可以运行 Skywork Moe 基础模型来体验一下！
+现在，你可以运行 Skywork MoE 基础模型来体验一下！
 
 ### 文本补全
 
