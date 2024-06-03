@@ -31,7 +31,7 @@ We introduce two innovative techniques: Gating Logit Normalization, which enhanc
 Skywork-MoE demonstrates comparable or superior performance to models with more parameters or more activated parameters, such as Grok-1, DBRX, Mistral 8*22, and Deepseek-V2.
 
 # News and Updates
-* 2024.6.3  We release the **Skywork-MoE-base** model.
+* 2024.6.3  We release the **Skywork-MoE-Base** model.
 
 # Table of contents
 
@@ -45,29 +45,29 @@ Skywork-MoE demonstrates comparable or superior performance to models with more 
 
 # Download URL
 
-|         | HuggingFace Model   |  ModelScope Model   |  Wisemodel Model  |
-|:-------:|:-----------:|:-----------------------------:|:-----------------------------:|
-| **Skywork-MoE-Base**     | 🤗 [Skywork-MoE-base](https://huggingface.co/Skywork/Skywork-MoE-Base) | 🤖[Skywork-MoE-Base](https://www.modelscope.cn/models/skywork/Skywork-MoE-base) | 👾[Skywork-MoE-Base](https://wisemodel.cn/models/Skywork/Skywork-MoE-base) |
+|         |                               HuggingFace Model                                |  ModelScope Model   |  Wisemodel Model  |
+|:-------:|:------------------------------------------------------------------------------:|:-----------------------------:|:-----------------------------:|
+| **Skywork-MoE-Base**     |     🤗 [Skywork-MoE-Base](https://huggingface.co/Skywork/Skywork-MoE-Base)     | 🤖[Skywork-MoE-Base](https://www.modelscope.cn/models/skywork/Skywork-MoE-base) | 👾[Skywork-MoE-Base](https://wisemodel.cn/models/Skywork/Skywork-MoE-base) |
 | **Skywork-MoE-Base-FP8**  | 🤗 [Skywork-MoE-Base-FP8](https://huggingface.co/Skywork/Skywork-MoE-Base-FP8) | 🤖 | 👾 |
-| **Skywork-MoE-Chat** | 😊 [Coming Soon]() | 🤖 | 👾 |
+| **Skywork-MoE-Chat** |                               😊 [Coming Soon]()                               | 🤖 | 👾 |
 
 # Benchmark Results
 
-We evaluated Skywork-MoE-base model on various popular benchmarks, including C-Eval, MMLU, CMMLU, GSM8K, MATH and HumanEval.
+We evaluated Skywork-MoE-Base model on various popular benchmarks, including C-Eval, MMLU, CMMLU, GSM8K, MATH and HumanEval.
 <img src="misc/skywork_moe_base_evaluation.png" alt="Image" width="600" height="280">
 
 # Demonstration of Hugging Face Model Inference
 
 ## Base Model Inference
 
-We can perform inference for the Skywork-MoE-base (16x13B size) model using HuggingFace on 8xA100/A800 or higher GPU hardware configurations.
+We can perform inference for the Skywork-MoE-Base (16x13B size) model using HuggingFace on 8xA100/A800 or higher GPU hardware configurations.
 
 ```python
 
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-model = AutoModelForCausalLM.from_pretrained("Skywork/Skywork-MoE-base", trust_remote_code=True, device_map='auto')
-tokenizer = AutoTokenizer.from_pretrained("Skywork/Skywork-MoE-base", trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained("Skywork/Skywork-MoE-Base", trust_remote_code=True, device_map='auto')
+tokenizer = AutoTokenizer.from_pretrained("Skywork/Skywork-MoE-Base", trust_remote_code=True)
 
 inputs = tokenizer('陕西的省会是西安', return_tensors='pt').to(model.device)
 response = model.generate(inputs.input_ids, max_length=128)
@@ -92,9 +92,9 @@ print(tokenizer.decode(response.cpu()[0], skip_special_tokens=True))
 
 ## Quickstart with vLLM
 
-We provide a method to quickly deploy the Skywork-Moe-base model based on vllm.
+We provide a method to quickly deploy the Skywork-Moe-Base model based on vllm.
 
-Under fp8 precision you can run Skywork-Moe-base with just only 8*4090.
+Under fp8 precision you can run Skywork-Moe-Base with just only 8*4090.
 
 You can get the source code in [`vllm`](https://github.com/SkyworkAI/vllm)
 
