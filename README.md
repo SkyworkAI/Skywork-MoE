@@ -63,11 +63,11 @@ We have done our utmost to ensure the compliance of the data used during the mod
 
 ## License Agreement
 
-The community usage of Skywork model requires [Skywork Community License](https://github.com/SkyworkAI/Skywork/blob/main/Skywork%20Community%20License.pdf). The Skywork model supports commercial use. If you plan to use the Skywork model or its derivatives for commercial purposes, you must abide by terms and conditions within [Skywork Community License](https://github.com/SkyworkAI/Skywork/blob/main/Skywork%20Community%20License.pdf).
+The community usage of Skywork model requires [Skywork Community License](https://github.com/SkyworkAI/Skywork-MoE/blob/main/Skywork%20Community%20License.pdf). The Skywork model supports commercial use. If you plan to use the Skywork model or its derivatives for commercial purposes, you must abide by terms and conditions within [Skywork Community License](https://github.com/SkyworkAI/Skywork-MoE/blob/main/Skywork%20Community%20License.pdf).
 
   
 
-[《Skywork 模型社区许可协议》》]:https://github.com/SkyworkAI/Skywork/blob/main/Skywork%20模型社区许可协议.pdf
+[《Skywork 模型社区许可协议》》]:https://github.com/SkyworkAI/Skywork-MoE/blob/main/Skywork%20模型社区许可协议.pdf
 
 
 [skywork-opensource@kunlun-inc.com]: mailto:skywork-opensource@kunlun-inc.com
