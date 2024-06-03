@@ -92,9 +92,9 @@ print(tokenizer.decode(response.cpu()[0], skip_special_tokens=True))
 
 ## Quickstart with vLLM
 
-We provide a method to quickly deploy the Skywork-Moe-Base model based on vllm.
+We provide a method to quickly deploy the Skywork-MoE-Base model based on vllm.
 
-Under fp8 precision you can run Skywork-Moe-Base with just only 8*4090.
+Under fp8 precision you can run Skywork-MoE-Base with just only 8*4090.
 
 You can get the source code in [`vllm`](https://github.com/SkyworkAI/vllm)
 
@@ -162,7 +162,7 @@ docker run \
     registry.cn-wulanchabu.aliyuncs.com/triple-mu/skywork-moe-vllm:v1
 ```
 
-Now, you can run the Skywork Moe base model for fun!
+Now, you can run the Skywork MoE base model for fun!
 
 ### Text Completion
 
