@@ -35,8 +35,9 @@ Skywork-MoE demonstrates comparable or superior performance to models with more 
 # Table of contents
 
 - [☁️Download URL](#Download-URL)
-- [👨‍💻Model Introduction](#Model-Introduction)
-- [🏆Model Evaluation](#Model-Evaluation)
+- [👨‍💻Benchmark Results](#Benchmark-Results)
+- [🏆Demonstration of Hugging Face Model Inference](#Demonstration-of-HuggingFace-Model-Inference)
+- [📕Demonstration of vLLM Model Inference](#Demonstration-of-vLLM-Model-Inference)
 - [⚠️Declaration and License Agreement](#Declaration-and-License-Agreement)
 - [🤝Contact Us and Citation](#Contact-Us-and-Citation)
 
@@ -49,6 +50,7 @@ Skywork-MoE demonstrates comparable or superior performance to models with more 
 | **Skywork-MoE-Base-FP8**  | 🤗 [Skywork-MoE-Base-FP8](https://huggingface.co/Skywork/Skywork-MoE-Base-FP8) | 🤖 | 👾 |
 
 # Benchmark Results
+
 We evaluated Skywork-MoE-base model on various popular benchmarks, including C-Eval, MMLU, CMMLU, GSM8K, MATH and HumanEval.
 <img src="misc/skywork_moe_base_evaluation.png" alt="Image" width="600" height="280">
 
