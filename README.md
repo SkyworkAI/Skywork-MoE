@@ -166,7 +166,7 @@ docker run \
     registry.cn-wulanchabu.aliyuncs.com/triple-mu/skywork-moe-vllm:v1
 ```
 
-Now, you can run the Skywork MoE base model for fun!
+Now, you can run the Skywork MoE model for fun!
 
 ### Text Completion
 

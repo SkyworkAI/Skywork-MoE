@@ -163,7 +163,7 @@ docker run \
     registry.cn-wulanchabu.aliyuncs.com/triple-mu/skywork-moe-vllm:v1
 ```
 
-现在，你可以运行 Skywork MoE 基础模型来体验一下！
+现在，你可以运行 Skywork MoE 模型来体验一下！
 
 ### 文本补全
 
