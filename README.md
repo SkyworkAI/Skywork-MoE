@@ -183,8 +183,7 @@ sampling_params = SamplingParams(temperature=0.3, max_tokens=256)
 
 llm = LLM(
     model=model_path,
-    quantization='fp8',
-    kv_cache_dtype='fp8',
+    kv_cache_dtype='auto',
     tensor_parallel_size=8,
     gpu_memory_utilization=0.95, 
     enforce_eager=True,
