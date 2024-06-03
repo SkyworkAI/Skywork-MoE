@@ -102,15 +102,16 @@ Since pytorch only supports 4090 using fp8 precision in the nightly version, you
 
 ``` shell
 # for cuda12.1
-pip3 install --pre torch --index-url https://download.pytorch.org/whl/nightly/cu121
+pip3 install --pre torch pytorch-triton --index-url https://download.pytorch.org/whl/nightly/cu121
 # for cuda12.4
-pip3 install --pre torch --index-url https://download.pytorch.org/whl/nightly/cu124
+pip3 install --pre torch pytorch-triton --index-url https://download.pytorch.org/whl/nightly/cu124
 ```
 
 Some other dependencies also need to be installed:
 
 ```shell
-pip3 install xformers vllm-flash-attn 
+pip3 install git+https://github.com/facebookresearch/xformers.git 
+pip3 install vllm-flash-attn 
 ```
 
 Then clone the [`vllm`](https://github.com/SkyworkAI/vllm) provided by skywork and change to `skywork-moe` branch:
