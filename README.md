@@ -114,10 +114,10 @@ MAX_JOBS=8 pip3 install git+https://github.com/facebookresearch/xformers.git # n
 pip3 install vllm-flash-attn --no-deps
 ```
 
-Then clone the [`vllm`](https://github.com/SkyworkAI/vllm) provided by skywork and change to `skywork-moe` branch:
+Then clone the [`vllm`](https://github.com/SkyworkAI/vllm) provided by skywork:
 
 ``` shell
-git clone https://github.com/SkyworkAI/vllm.git -b skywork-moe
+git clone https://github.com/SkyworkAI/vllm.git
 cd vllm
 ```
 
@@ -165,7 +165,7 @@ Now, you can run the Skywork Moe base model for fun!
 ``` python
 from vllm import LLM, SamplingParams
 
-model_path = '/path/to/skywork-moe-base'
+model_path = 'Skywork/Skywork-MoE-Base-FP8'
 prompts = [
     "The president of the United States is",
     "The capital of France is",
