@@ -46,8 +46,8 @@ Skywork-MoE 展示出与参数更多或激活参数更多的模型（如Grok-1�
 |         |                                 HuggingFace 模型                                 |                                  ModelScope 模型                                  |                                Wisemodel 模型                                |
 |:-------:|:------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------:|:--------------------------------------------------------------------------:|
 | **Skywork-MoE-Base**     |     🤗 [Skywork-MoE-Base](https://huggingface.co/Skywork/Skywork-MoE-Base)     | 🤖[Skywork-MoE-Base](https://www.modelscope.cn/models/skywork/Skywork-MoE-base) | 👾[Skywork-MoE-Base](https://wisemodel.cn/models/Skywork/Skywork-MoE-base) |
-| **Skywork-MoE-Base-FP8**  | 🤗 [Skywork-MoE-Base-FP8](https://huggingface.co/Skywork/Skywork-MoE-Base-FP8) |                                       🤖                                        |                                     👾                                     |
-| **Skywork-MoE-Chat** | 😊 [Coming Soon]() | 🤖 | 👾 |
+| **Skywork-MoE-Base-FP8**  | 🤗 [Skywork-MoE-Base-FP8](https://huggingface.co/Skywork/Skywork-MoE-Base-FP8) | 🤖[Skywork-MoE-Base-FP8](https://www.modelscope.cn/models/skywork/Skywork-MoE-Base-FP8) | 👾[Skywork-MoE-Base-FP8](https://wisemodel.cn/models/Skywork/Skywork-MoE-Base-FP8) |
+| **Skywork-MoE-Chat** |                               😊 [Coming Soon]()                               | 🤖 | 👾 |
 
 # 基准测试结果
 
