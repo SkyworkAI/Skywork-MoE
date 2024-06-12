@@ -8,7 +8,7 @@
 <div align="center"><img src="misc/skywork_logo.jpeg" width="550"/></div>
 
 <p align="center">
-🤗 <a href="https://huggingface.co/Skywork" target="_blank">Hugging Face</a> • 🤖 <a href="https://modelscope.cn/organization/Skywork" target="_blank">ModelScope</a> • 👾 <a href="https://wisemodel.cn/organization/Skywork" target="_blank">Wisemodel</a> • 💬 <a href="https://github.com/SkyworkAI/Skywork/blob/main/misc/wechat.png?raw=true" target="_blank">WeChat</a>• 📜<a href="https://github.com/SkyworkAI/Skywork-MoE/blob/main/skywork-moe-tech-report.pdf" target="_blank">Tech Report</a>
+🤗 <a href="https://huggingface.co/Skywork" target="_blank">Hugging Face</a> • 🤖 <a href="https://modelscope.cn/organization/Skywork" target="_blank">ModelScope</a> • 👾 <a href="https://wisemodel.cn/organization/Skywork" target="_blank">Wisemodel</a> • 💬 <a href="https://github.com/SkyworkAI/Skywork/blob/main/misc/wechat.png?raw=true" target="_blank">WeChat</a>• 📜<a href="https://arxiv.org/pdf/2406.06563" target="_blank">Tech Report</a>
 </p>
 
 <div align="center">
@@ -224,10 +224,20 @@ If you find our work helpful, please feel free to cite our paper~
 ```
 @misc{wei2024skywork,
       title={Skywork-MoE: A Deep Dive into Training Techniques for Mixture-of-Experts Language Models}, 
-      author={Tianwen Wei, Bo Zhu, Liang Zhao, Cheng Cheng, Biye Li, Weiwei Lü, Peng Cheng, Jianhao Zhang, Xiaoyu Zhang, Liang Zeng, Xiaokun Wang, Yutuan Ma, Rui Hu, Shuicheng Yan, Han Fang, Yahui Zhou},
+      author={Tianwen Wei, Bo Zhu, Liang Zhao, Cheng Cheng, Biye Li, Weiwei Lü, Peng Cheng, Jianhao Zhang, Xiaoyu Zhang, Liang Zeng, Xiaokun Wang, Yutuan Ma, Rui Hu, Shuicheng Yan, Han Fang, Yahui Zhou},
+      url={https://arxiv.org/pdf/2406.06563},
       year={2024},
       archivePrefix={arXiv},
       primaryClass={cs.CL}
 }
 ```
 
+```
+@article{zhao2024longskywork,
+  title={LongSkywork: A Training Recipe for Efficiently Extending Context Length in Large Language Models},
+  author={Zhao, Liang and Wei, Tianwen and Zeng, Liang and Cheng, Cheng and Yang, Liu and Cheng, Peng and Wang, Lijie and Li, Chenxia and Wu, Xuejie and Zhu, Bo and others},
+  journal={arXiv preprint arXiv:2406.00605},
+  url={https://arxiv.org/abs/2406.00605},
+  year={2024}
+}
+```
